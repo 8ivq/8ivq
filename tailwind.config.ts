@@ -1,0 +1,140 @@
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        'mono': ['var(--font-space-mono)'],
+        'inconsolata': ['var(--font-inconsolata)'],
+      },
+      colors: {
+        'terminal': {
+          bg: '#0a0a0a',
+          text: '#c0c0c0',
+          border: '#333',
+          highlight: '#555',
+          white: '#ffffff',
+          gray: {
+            100: '#b0b0b0',
+            200: '#888',
+            300: '#777',
+            400: '#666',
+            500: '#555',
+            600: '#444',
+            700: '#333',
+            800: '#222',
+            900: '#111',
+          }
+        },
+        'glitch': {
+          1: '#666',
+          2: '#333',
+        },
+      },
+      animation: {
+        'drift': 'drift 20s ease-in-out infinite alternate',
+        'flicker': 'flicker 3s ease-in-out infinite alternate',
+        'glitch-1': 'glitch1 0.3s linear infinite',
+        'glitch-2': 'glitch2 0.3s linear infinite',
+        'typewriter': 'typewriter 3s steps(20, end)',
+        'scan': 'scan 2s linear infinite',
+        'expand': 'expand 1s ease-out',
+        'shimmer': 'shimmer 3s infinite',
+        'fadeInUp': 'fadeInUp 0.5s ease forwards',
+        'fadeInUp-delay-1': 'fadeInUp 0.5s ease 0.5s forwards',
+        'fadeInUp-delay-2': 'fadeInUp 0.5s ease 1s forwards',
+        'fadeInUp-delay-3': 'fadeInUp 0.5s ease 1.5s forwards',
+        'fadeInUp-delay-4': 'fadeInUp 0.5s ease 2s forwards',
+      },
+      keyframes: {
+        drift: {
+          'from': { transform: 'translateX(-10px) translateY(-5px)' },
+          'to': { transform: 'translateX(10px) translateY(5px)' },
+        },
+        flicker: {
+          '0%, 84%, 100%': { opacity: '1' },
+          '85%, 99%': { opacity: '0.8' },
+        },
+        typewriter: {
+          'from': { width: '0' },
+          'to': { width: '100%' },
+        },
+        scan: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        expand: {
+          'from': { width: '0' },
+          'to': { width: '30px' },
+        },
+        shimmer: {
+          '0%': { left: '-100%' },
+          '100%': { left: '100%' },
+        },
+        fadeInUp: {
+          'from': {
+            opacity: '0',
+            transform: 'translateY(20px)',
+          },
+          'to': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        glitch1: {
+          '0%': { clipPath: 'rect(42px, 9999px, 44px, 0)' },
+          '5%': { clipPath: 'rect(12px, 9999px, 59px, 0)' },
+          '10%': { clipPath: 'rect(48px, 9999px, 29px, 0)' },
+          '15%': { clipPath: 'rect(42px, 9999px, 73px, 0)' },
+          '20%': { clipPath: 'rect(63px, 9999px, 27px, 0)' },
+          '25%': { clipPath: 'rect(34px, 9999px, 55px, 0)' },
+          '30%': { clipPath: 'rect(86px, 9999px, 73px, 0)' },
+          '35%': { clipPath: 'rect(20px, 9999px, 20px, 0)' },
+          '40%': { clipPath: 'rect(26px, 9999px, 60px, 0)' },
+          '45%': { clipPath: 'rect(25px, 9999px, 66px, 0)' },
+          '50%': { clipPath: 'rect(57px, 9999px, 98px, 0)' },
+          '55%': { clipPath: 'rect(5px, 9999px, 46px, 0)' },
+          '60%': { clipPath: 'rect(82px, 9999px, 31px, 0)' },
+          '65%': { clipPath: 'rect(54px, 9999px, 27px, 0)' },
+          '70%': { clipPath: 'rect(28px, 9999px, 99px, 0)' },
+          '75%': { clipPath: 'rect(45px, 9999px, 69px, 0)' },
+          '80%': { clipPath: 'rect(23px, 9999px, 85px, 0)' },
+          '85%': { clipPath: 'rect(54px, 9999px, 84px, 0)' },
+          '90%': { clipPath: 'rect(45px, 9999px, 47px, 0)' },
+          '95%': { clipPath: 'rect(37px, 9999px, 20px, 0)' },
+          '100%': { clipPath: 'rect(4px, 9999px, 91px, 0)' },
+        },
+        glitch2: {
+          '0%': { clipPath: 'rect(65px, 9999px, 100px, 0)' },
+          '5%': { clipPath: 'rect(52px, 9999px, 74px, 0)' },
+          '10%': { clipPath: 'rect(79px, 9999px, 85px, 0)' },
+          '15%': { clipPath: 'rect(75px, 9999px, 5px, 0)' },
+          '20%': { clipPath: 'rect(67px, 9999px, 61px, 0)' },
+          '25%': { clipPath: 'rect(14px, 9999px, 79px, 0)' },
+          '30%': { clipPath: 'rect(1px, 9999px, 66px, 0)' },
+          '35%': { clipPath: 'rect(86px, 9999px, 30px, 0)' },
+          '40%': { clipPath: 'rect(23px, 9999px, 98px, 0)' },
+          '45%': { clipPath: 'rect(85px, 9999px, 72px, 0)' },
+          '50%': { clipPath: 'rect(71px, 9999px, 75px, 0)' },
+          '55%': { clipPath: 'rect(2px, 9999px, 48px, 0)' },
+          '60%': { clipPath: 'rect(30px, 9999px, 16px, 0)' },
+          '65%': { clipPath: 'rect(59px, 9999px, 50px, 0)' },
+          '70%': { clipPath: 'rect(41px, 9999px, 62px, 0)' },
+          '75%': { clipPath: 'rect(2px, 9999px, 82px, 0)' },
+          '80%': { clipPath: 'rect(47px, 9999px, 73px, 0)' },
+          '85%': { clipPath: 'rect(3px, 9999px, 19px, 0)' },
+          '90%': { clipPath: 'rect(71px, 9999px, 89px, 0)' },
+          '95%': { clipPath: 'rect(40px, 9999px, 4px, 0)' },
+          '100%': { clipPath: 'rect(63px, 9999px, 29px, 0)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+}
+export default config
